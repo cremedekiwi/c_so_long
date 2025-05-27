@@ -33,28 +33,32 @@ OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) libft/libft.a minilibx-linux/libmlx.a
-	$(CC) -o $(NAME) $(OBJS) $(LLIB) $(LMLX)
+	@$(CC) -o $(NAME) $(OBJS) $(LLIB) $(LMLX)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@mkdir -p $(OBJS_DIR)
-	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
 
 libft/libft.a:
-	$(MAKE) -C libft
+	@$(MAKE) -C libft --no-print-directory
+	@echo "Compile libft"
 
 minilibx-linux/libmlx.a:
-	$(MAKE) -C minilibx-linux
+	@$(MAKE) -C minilibx-linux --no-print-directory
+	@echo "Compile minilibx"
 
 clean:
-	rm -f $(OBJS)
-	rm -rf $(OBJS_DIR)
-	$(MAKE) -C libft clean
-	$(MAKE) -C minilibx-linux clean
+	@rm -f $(OBJS)
+	@rm -rf $(OBJS_DIR)
+	@$(MAKE) -C libft clean --no-print-directory
+	@$(MAKE) -C minilibx-linux clean --no-print-directory
+	@echo "Delete .o"
 
 fclean: clean
-	rm -f $(NAME)
-	$(MAKE) -C libft fclean
-	$(MAKE) -C minilibx-linux clean
+	@rm -f $(NAME)
+	@$(MAKE) -C libft fclean --no-print-directory
+	@$(MAKE) -C minilibx-linux clean --no-print-directory
+	@echo "Delete .a"
 
 re: fclean all
 
