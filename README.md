@@ -2,6 +2,8 @@
 
 A 2D game project built with MiniLibX, where the player must collect all coins and reach the exit. This project focuses on graphics programming, event handling, and game logic.
 
+<img src="https://raw.githubusercontent.com/cremedekiwi/c_so_long/refs/heads/main/animation.gif" alt="animation">
+
 ## 📋 Table of Contents
 
 - [Features](#features)
@@ -11,7 +13,6 @@ A 2D game project built with MiniLibX, where the player must collect all coins a
 - [Controls](#controls)
 - [Project Structure](#project-structure)
 - [Map Validation](#map-validation)
-- [Screenshots](#screenshots)
 - [Technical Details](#technical-details)
 
 ## ✨ Features
@@ -167,10 +168,6 @@ Map is not surrounded by walls # Missing border walls
 No valid path                  # Impossible to complete
 Window size is too large       # Map too big for screen
 ```
-
-## 🖼️ Screenshots
-
-*Note: Add screenshots of your game here*
 
 ## 🔧 Technical Details
 
