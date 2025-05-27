@@ -2,7 +2,7 @@
 
 A 2D game project built with MiniLibX, where the player must collect all coins and reach the exit. This project focuses on graphics programming, event handling, and game logic.
 
-<img src="https://raw.githubusercontent.com/cremedekiwi/c_so_long/refs/heads/main/animation.gif" alt="animation">
+<img src="https://raw.githubusercontent.com/cremedekiwi/c_so_long/refs/heads/main/gif.gif" alt="animation">
 
 ## 📋 Table of Contents
 
@@ -28,12 +28,14 @@ A 2D game project built with MiniLibX, where the player must collect all coins a
 ## 🚀 Installation
 
 ### Prerequisites
+
 - GCC compiler
 - Make
 - MiniLibX library
 - X11 development libraries (Linux)
 
 ### Clone and Build
+
 ```bash
 # Clone the repository
 git clone <repository-url>
@@ -59,6 +61,7 @@ make re
 ```
 
 ### Examples
+
 ```bash
 # Play with a small map
 ./so_long maps_valid/map0_small.ber
@@ -74,15 +77,16 @@ make re
 
 Maps must be saved with the `.ber` extension and contain the following elements:
 
-| Character | Description |
-|-----------|-------------|
-| `1` | Wall |
-| `0` | Empty space (floor) |
-| `P` | Player starting position |
-| `C` | Coin/Collectible |
-| `E` | Exit |
+| Character | Description              |
+| --------- | ------------------------ |
+| `1`       | Wall                     |
+| `0`       | Empty space (floor)      |
+| `P`       | Player starting position |
+| `C`       | Coin/Collectible         |
+| `E`       | Exit                     |
 
 ### Map Rules
+
 - Map must be rectangular
 - Map must be surrounded by walls (`1`)
 - Must contain exactly one player (`P`) and one exit (`E`)
@@ -90,6 +94,7 @@ Maps must be saved with the `.ber` extension and contain the following elements:
 - Must have a valid path from player to all coins and the exit
 
 ### Valid Map Example
+
 ```
 1111111111111
 10010000000C1
@@ -100,14 +105,14 @@ Maps must be saved with the `.ber` extension and contain the following elements:
 
 ## 🎮 Controls
 
-| Key | Action |
-|-----|--------|
-| `W` or `w` | Move Up |
-| `S` or `s` | Move Down |
-| `A` or `a` | Move Left |
-| `D` or `d` | Move Right |
-| `ESC` | Exit Game |
-| `X` (close button) | Exit Game |
+| Key                | Action     |
+| ------------------ | ---------- |
+| `W` or `w`         | Move Up    |
+| `S` or `s`         | Move Down  |
+| `A` or `a`         | Move Left  |
+| `D` or `d`         | Move Right |
+| `ESC`              | Exit Game  |
+| `X` (close button) | Exit Game  |
 
 ## 📁 Project Structure
 
@@ -142,22 +147,26 @@ so_long/
 The game performs comprehensive map validation:
 
 ### Character Validation
+
 - ✅ Contains all required characters (1, 0, P, C, E)
 - ✅ No invalid characters
 - ✅ Exactly one player and one exit
 - ✅ At least one coin
 
 ### Structure Validation
+
 - ✅ Rectangular shape (all rows same length)
 - ✅ Surrounded by walls
 - ✅ No empty lines
 
 ### Path Validation
+
 - ✅ Player can reach all coins
 - ✅ Player can reach exit after collecting all coins
 - ✅ Uses flood fill algorithm for path finding
 
 ### Error Messages
+
 ```bash
 Error
 Invalid char                    # Unknown character in map
@@ -172,22 +181,26 @@ Window size is too large       # Map too big for screen
 ## 🔧 Technical Details
 
 ### Libraries Used
+
 - **MiniLibX**: Graphics library for window management and rendering
 - **libft**: Custom C library with utility functions
 - **ft_printf**: Custom printf implementation
 - **get_next_line**: Line-by-line file reading
 
 ### Key Algorithms
+
 - **Flood Fill**: Used for path validation to ensure map is solvable
 - **Collision Detection**: Prevents player from moving into walls
 - **State Management**: Tracks game state, coin count, and win conditions
 
 ### Memory Management
+
 - Proper allocation and deallocation of map data
 - Image cleanup on exit
 - Protection against memory leaks
 
 ### Performance Considerations
+
 - Tile-based rendering (42x42 pixel tiles)
 - Efficient map parsing and validation
 - Window size validation to prevent oversized maps
@@ -195,6 +208,7 @@ Window size is too large       # Map too big for screen
 ## 🐛 Debugging
 
 ### Common Issues
+
 1. **"Error Opening file"**: Check if the map file exists and has correct permissions
 2. **"Map is not a rectangle"**: Ensure all rows have the same length
 3. **"No valid path"**: Make sure player can reach all coins and the exit
